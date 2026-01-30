@@ -1,6 +1,8 @@
 ## Vrac
 
-Juste des trucs en vrac.
+Juste des projets en vrac, plein d'expérimentations intéressantes.
+Le but était de rester sur un stack hyper simple avec du HTML / CSS / JS dans un fichier par projet.
+Le périmètre de chaque projet est donc assez limité.
 
 - 3dshapes.html : Un truc qui permet de visualiser et créer des formes en 3D qui bougent avec une gestion de la physique approximative
 - lines.html : Inspiré des plus grands screensavers de Windows 95, un tube parcours et remplit l'écran, cette fois-ci avec une caméra
@@ -19,3 +21,5 @@ Juste des trucs en vrac.
 - randgradi.html : Un gradient simple avec une évolution aléatoire
 - soundwave.html : Génération de sons aléatoire avec visualisation d'une onde et ses propriétés (plus ou moins)
 - chillkeyboard.html : Un clavier qui fait des sons et la pluie
+
+
