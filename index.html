@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VRAC.html - Random Experiments</title>
+    <title>Vrac. Random experiments</title>
+
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    
     <style>
         * {
             margin: 0;
@@ -27,8 +38,9 @@
 
         #nav-controls {
             position: fixed;
-            top: 20px;
+            top: 50%;
             right: 20px;
+            transform: translateY(-50%);
             z-index: 1000;
             display: flex;
             gap: 10px;
@@ -37,7 +49,7 @@
         }
 
         .nav-button {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(44, 44, 44, 0.823);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: #fff;
@@ -50,7 +62,7 @@
         }
 
         .nav-button:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(45, 45, 45, 0.699);
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-2px);
         }
@@ -60,7 +72,7 @@
         }
 
         #experiment-title {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(32, 32, 32, 0.702);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 8px 16px;
@@ -71,8 +83,9 @@
 
         @media (max-width: 768px) {
             #nav-controls {
-                top: 10px;
+                top: 50%;
                 right: 10px;
+                transform: translateY(-50%);
                 gap: 8px;
             }
 
