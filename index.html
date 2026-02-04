@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRAC.html - Random Experiments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        #experiment-frame {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+
+        #nav-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 12px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .nav-button:active {
+            transform: translateY(0);
+        }
+
+        #experiment-title {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            #nav-controls {
+                top: 10px;
+                right: 10px;
+                gap: 8px;
+            }
+
+            .nav-button {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+
+            #experiment-title {
+                font-size: 10px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <iframe id="experiment-frame" src=""></iframe>
+    
+    <div id="nav-controls">
+        <div id="experiment-title">Loading...</div>
+        <button class="nav-button" id="random-btn">Random Experiment</button>
+    </div>
+
+    <script>
+        // List of all experiments
+        const experiments = [
+            { name: '2D Shapes', path: '2dshape.html' },
+            { name: '3D Shapes', path: '3dshapes.html' },
+            { name: 'Ball', path: 'ball.html' },
+            { name: 'Chill Keyboard', path: 'chillkeyboard.html' },
+            { name: 'Clouds', path: 'clouds.html' },
+            { name: 'Dynamic Gradient', path: 'dynamicgradient.html' },
+            { name: 'Fight', path: 'fight.html' },
+            { name: 'Game of Life', path: 'gameoflife.html' },
+            { name: 'Grid Generator', path: 'gridgen.html' },
+            { name: 'Light', path: 'light.html' },
+            { name: 'Lines', path: 'lines.html' },
+            { name: 'Maze', path: 'maze.html' },
+            { name: 'Pool', path: 'pool.html' },
+            { name: 'Random Gradient', path: 'randgradi.html' },
+            { name: 'Sound Wave', path: 'soundwave.html' },
+            { name: 'Square Propagation', path: 'squarepropagation' },
+            { name: 'Textures', path: 'textures.html' },
+            { name: 'Solar System', path: 'solarsystem/moon.html' }
+        ];
+
+        const frame = document.getElementById('experiment-frame');
+        const title = document.getElementById('experiment-title');
+        const randomBtn = document.getElementById('random-btn');
+
+        let currentIndex = -1;
+
+        // Load a random experiment
+        function loadRandomExperiment() {
+            const randomIndex = Math.floor(Math.random() * experiments.length);
+            currentIndex = randomIndex;
+            loadExperiment(randomIndex);
+        }
+
+        // Load specific experiment by index
+        function loadExperiment(index) {
+            const experiment = experiments[index];
+            frame.src = experiment.path;
+            title.textContent = experiment.name;
+        }
+
+        // Event listeners
+        randomBtn.addEventListener('click', loadRandomExperiment);
+
+        // Load random experiment on page load
+        loadRandomExperiment();
+    </script>
+</body>
+</html>
